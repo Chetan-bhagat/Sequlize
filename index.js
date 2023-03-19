@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json())
 
 const sequel = new Sequelize("RDS", "admin", "abcd1234", {
-    host: "database-1.cz6hmeoir9hi.eu-north-1.rds.amazonaws.com",
+    host: "database-2.cz6hmeoir9hi.eu-north-1.rds.amazonaws.com",
     dialect: "mysql",
     pool:{
         max:10,
