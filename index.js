@@ -4,9 +4,15 @@ const { Sequelize, DataTypes } = require("sequelize");
 const app = express();
 app.use(express.json())
 
-const sequel = new Sequelize("Evaluation", "root", "Khiladi@786", {
-    host: "localhost",
-    dialect: "mysql"
+const sequel = new Sequelize("RDS", "admin", "abcd1234", {
+    host: "database-1.cz6hmeoir9hi.eu-north-1.rds.amazonaws.com",
+    dialect: "mysql",
+    pool:{
+        max:10,
+        min:0,
+        idle:1000,
+
+    },
 });
 
 sequel.authenticate()
